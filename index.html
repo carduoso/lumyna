@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumyna Flow — agendamento e gestão para o seu negócio</title>
+  <meta name="description" content="Seu cliente agenda sozinho pelo seu link, paga o sinal e o horário fica garantido. Agenda, profissionais, serviços, clientes e faturamento em um só lugar.">
+  <meta name="theme-color" content="#062C36">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231fb0cb%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%230a6f86%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2216%22%20fill=%22url(%23g)%22/%3E%3Cpath%20d=%22M17%2044%20L28%2022%20L36%2038%20L47%2017%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-width=%225.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+  <script>document.documentElement.className = "js";</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ícones reutilizáveis -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></symbol>
+  </svg>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar__in">
+      <a href="#inicio" class="brand" aria-label="Lumyna Flow — início">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="currentColor"/>
+          <path d="M9 22 L14.5 11 L18 19 L23 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand__name">Lumyna <b>Flow</b></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#problema">Por que trocar</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <a href="https://wa.me/5548999116469?text=ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20no%20lumyna%20flow" class="btn btn--small" data-cta>Garantir acesso</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+        <span class="hero__dots"></span>
+        <span class="hero__spot"></span>
+      </div>
+
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 aria-label="Chega de agenda de papel e de horário marcado por recado.">
+            <span class="w" aria-hidden="true"><span style="--i:0">Chega</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:1">de</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:2">agenda</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:3">de</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:4">papel</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:5">e</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:6">de</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:7">horário</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:8">marcado</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:9">por</span></span>
+            <span class="w" aria-hidden="true"><span style="--i:10">recado.</span></span>
+          </h1>
+          <p class="hero__lead" data-in style="--d:.95s">Seu cliente escolhe o serviço e o horário no seu link, paga o sinal e o horário fica garantido. Você cuida de agenda, profissionais, serviços e clientes em um só lugar.</p>
+          <div class="hero__actions" data-in style="--d:1.1s">
+            <a href="https://wa.me/5548999116469?text=ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20no%20lumyna%20flow" class="btn btn--primary btn--wa" data-cta>
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+              Garantir meu acesso
+            </a>
+            <a href="#recursos" class="btn btn--ghost">Ver o que tem dentro</a>
+          </div>
+          <p class="hero__note" data-in style="--d:1.25s">Agendamento e gestão para o seu negócio.</p>
+        </div>
+
+        <div class="media" id="video" data-in style="--d:.5s">
+          <div class="media__tilt" id="tilt">
+            <div class="media__frame" id="mediaFrame">
+              <video class="media__video" id="demo" preload="metadata" playsinline>
+                Seu navegador não consegue reproduzir este vídeo.
+              </video>
+              <button class="media__play" id="playBtn" type="button" aria-label="Assistir ao vídeo de apresentação">
+                <span class="media__play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+                </span>
+                <span class="media__play-text">Assistir em 1 minuto</span>
+              </button>
+            </div>
+
+            <span class="chip chip--a" style="--d:1.4s" aria-hidden="true">
+              <span class="chip__ico"><svg><use href="#i-check"/></svg></span>
+              Agendamento confirmado
+            </span>
+            <span class="chip chip--b" style="--d:1.7s" aria-hidden="true">
+              <span class="chip__ico"><svg><use href="#i-check"/></svg></span>
+              Sinal pago
+            </span>
+            <span class="chip chip--c" style="--d:2s" aria-hidden="true">
+              <span class="chip__ico"><svg><use href="#i-check"/></svg></span>
+              Horário garantido
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITA ANIMADA -->
+    <div class="ribbon-wrap" aria-hidden="true">
+      <div class="ribbon">
+        <div class="ribbon__track">
+          <div class="ribbon__group">
+            <span>Agenda online</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Página com a sua marca</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Sinal que garante o horário</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Profissionais e serviços</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Clientes e faturamento</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>QR Code do seu link</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+          </div>
+          <div class="ribbon__group">
+            <span>Agenda online</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Página com a sua marca</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Sinal que garante o horário</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Profissionais e serviços</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>Clientes e faturamento</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+            <span>QR Code do seu link</span><svg class="ribbon__sep"><use href="#i-spark"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEMA -->
+    <section class="section" id="problema">
+      <div class="wrap">
+        <h2 class="section__title" data-reveal>Do caderninho para um link que trabalha por você</h2>
+        <div class="compare" data-reveal>
+          <div class="compare__col compare__col--before">
+            <h3>Agenda de papel</h3>
+            <ul>
+              <li><span class="strike">Horários riscados, trocados e difíceis de ler</span></li>
+              <li><span class="strike">Cliente pergunta horário livre e você responde um a um</span></li>
+              <li><span class="strike">Sem sinal, o horário some quando a pessoa não aparece</span></li>
+              <li><span class="strike">Faturamento só no fim do mês, na calculadora</span></li>
+            </ul>
+          </div>
+          <div class="compare__col compare__col--after">
+            <h3>Lumyna Flow</h3>
+            <ul>
+              <li>Agenda por dia, semana ou mês, sempre atualizada</li>
+              <li>O cliente vê os horários livres e agenda sozinho</li>
+              <li>O atendimento mostra se o sinal foi pago</li>
+              <li>Faturamento de hoje, da semana e do mês no painel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="section section--tint" id="recursos">
+      <div class="wrap features">
+        <div class="features__head">
+          <h2 class="section__title" data-reveal>Agendamento e gestão do seu negócio em um só lugar</h2>
+          <p class="features__sub" data-reveal style="--d:.15s">Cada tela do vídeo está aqui: da página que o cliente vê até o painel que só você acessa.</p>
+        </div>
+
+        <div class="features__list" data-stagger>
+          <article class="feature" data-reveal>
+            <span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/><path d="M7 6.6h.01M10 6.6h.01"/></svg></span>
+            <div>
+              <h3>Página de agendamento com a cara do seu negócio</h3>
+              <p>Coloque sua logo, foto de capa e suas cores, ou escolha entre cinco modelos de visual: Elegante, Moderno, Vibrante, Profissional e Natural. A página tem botão para o seu WhatsApp e um QR Code pronto para imprimir.</p>
+            </div>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div>
+              <h3>Sinal que garante o horário</h3>
+              <p>O atendimento fica como “aguardando sinal” até a confirmação. Quando o sinal entra, o cliente vê que o horário está garantido e você vê o status na agenda.</p>
+            </div>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+            <div>
+              <h3>Agenda por dia, semana ou mês</h3>
+              <p>Filtre por profissional e resolva cada atendimento em um toque: marcar como concluído, marcar como faltou, excluir ou reabrir como agendado.</p>
+            </div>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.5 3.2-5.5 6.5-5.5s5.9 2 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c2 .6 3.2 2.3 3.5 5"/></svg></span>
+            <div>
+              <h3>Profissionais e serviços</h3>
+              <p>Cada profissional recebe apenas os serviços que realiza. Duração e preço de cada serviço definem os horários que aparecem para o cliente.</p>
+            </div>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16"/><path d="M8 15l4-4 3 3 5-6"/></svg></span>
+            <div>
+              <h3>Clientes e faturamento</h3>
+              <p>Lista de clientes com WhatsApp e data do último atendimento. No painel, você acompanha agendamentos de hoje e o faturamento do dia, da semana, do mês e total.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="wrap">
+        <h2 class="section__title" data-reveal>Do cadastro ao primeiro agendamento</h2>
+        <ol class="steps" data-reveal>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">1</span>
+            <div>
+              <h3>Cadastre serviços e profissionais</h3>
+              <p>Informe duração, preço e quem realiza cada serviço. Defina também os horários de funcionamento.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">2</span>
+            <div>
+              <h3>Personalize e divulgue sua página</h3>
+              <p>Ajuste logo, capa e cores. Depois compartilhe o link no Instagram e no WhatsApp ou imprima o QR Code.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">3</span>
+            <div>
+              <h3>Receba e acompanhe os agendamentos</h3>
+              <p>O cliente escolhe data e horário, informa nome e WhatsApp e confirma. O atendimento aparece na sua agenda na hora.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta__rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="wrap cta__in">
+        <div>
+          <h2 data-reveal>Garanta seu acesso e coloque a página do seu negócio no ar.</h2>
+          <p class="cta__sub" data-reveal style="--d:.12s">Você fala direto com a gente pelo WhatsApp.</p>
+        </div>
+        <a href="https://wa.me/5548999116469?text=ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20no%20lumyna%20flow" class="btn btn--primary btn--big btn--wa" data-cta data-reveal="scale" style="--d:.2s">
+          <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+          Garantir meu acesso
+        </a>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section class="section" id="duvidas">
+      <div class="wrap faq">
+        <h2 class="section__title" data-reveal>Dúvidas frequentes</h2>
+        <div class="faq__list" data-stagger>
+          <details data-reveal>
+            <summary>Serve só para studios e salões de beleza?</summary>
+            <p>Não. A Lumyna Flow é para agendamento e gestão do seu negócio: você cadastra serviços, profissionais e horários, e o cliente agenda pelo seu link.</p>
+          </details>
+          <details data-reveal>
+            <summary>Meu cliente precisa criar conta para agendar?</summary>
+            <p>Não. Ele abre o seu link, escolhe o serviço, a data e o horário, informa nome e WhatsApp (e-mail é opcional) e confirma.</p>
+          </details>
+          <details data-reveal>
+            <summary>Posso ter mais de um profissional?</summary>
+            <p>Sim. Você cadastra cada profissional e define quais serviços ele realiza. Na agenda, dá para ver todos juntos ou filtrar por um.</p>
+          </details>
+          <details data-reveal>
+            <summary>Consigo deixar a página com a minha identidade?</summary>
+            <p>Sim. Você troca logo, capa, título, subtítulo e cores, e pode partir de um dos cinco modelos prontos. Uma pré-visualização mostra como a página vai ficar.</p>
+          </details>
+          <details data-reveal>
+            <summary>Como funciona o sinal?</summary>
+            <p>O atendimento fica como “aguardando sinal” até a confirmação. Depois disso, aparece como sinal pago e o horário fica garantido.</p>
+          </details>
+          <details data-reveal>
+            <summary>Dá para testar antes de assinar?</summary>
+            <p>Sim, há um período de teste gratuito. Você usa o sistema com a sua própria agenda antes de escolher um plano.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <span class="brand brand--footer">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="currentColor"/>
+          <path d="M9 22 L14.5 11 L18 19 L23 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand__name">Lumyna <b>Flow</b></span>
+      </span>
+      <nav class="footer__links" aria-label="Rodapé">
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+        <a href="https://wa.me/5548999116469?text=ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20no%20lumyna%20flow" data-cta>Falar pelo WhatsApp</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> Lumyna Flow. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5548999116469?text=ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20no%20lumyna%20flow" class="fab" id="fab" data-cta aria-label="Garantir meu acesso pelo WhatsApp">
+    <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
